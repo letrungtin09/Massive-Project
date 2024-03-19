@@ -1,0 +1,33 @@
+.cover{
+    &.section-padding{
+        padding: $pd-13 0;
+    }
+    background-image: url(../img/cover.jpeg);
+    @extend %backgroundImg;
+    .cover__text{
+        span{
+            @include styleText($fs-4 + 1,$fw-2,$color-yellow-0);
+            letter-spacing: $ls-2;
+        }
+        h1{
+            @include styleText($fs-5 + 2,$fw-2,$color-white-0);
+            letter-spacing: $ls-1;
+            line-height: $lh-2;
+        }
+    }
+    .cover__button{
+        margin-top: $mg-7;
+        button{
+            margin-bottom: $mg-0 + 3;
+        }
+    }
+
+    // RESPONSIVE
+    @media screen and (min-width: 769px){
+        .cover__text{
+            h1{
+                font-size: $fs-6;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+%backgroundImg{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+%styleButton{
+    border: 1px solid transparent;
+    border-radius: 0;
+    font-size: $fs-1 - 1;
+    line-height: $lh-3;
+    letter-spacing: $ls-0;
+    text-transform: uppercase;
+    color: $color-white-0;
+    padding: $pd-5 $pd-2;
+    transition: all 0.3s;
+}
+%hoverImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 20px solid $color-black-5;
+    background-color: $color-white-2;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s; 
+}

@@ -1,0 +1,177 @@
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 $box-shadow-0 $box-shadow-0 $color-black-5;
+    .massiveNavbar{
+        background-color: $color-black-4;
+        justify-content: space-between;
+        padding: 0 $pd-2;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        .navbar-brand{
+            display: flex;
+            align-items: center;
+            height: 50px;
+            padding: 0;
+            margin-right: $mg-3;
+            img{
+                display: inline-block;
+                height: 50px;
+                padding: $pd-8 0;
+            }
+        }
+        .navbar-toggler{
+            padding: $pd-1 + 0.5 0;
+            i{
+                color: $color-white-0;
+                font-size: $fs-5 - 1;
+            }
+        }
+        .navbar-collapse{
+            background-color: $color-white-0;
+            flex-grow: 0;
+            .nav-item{
+                margin-left: $mg-0;
+                &:last-child{
+                    .nav-link{
+                        border-bottom: 1px solid $color-white-4;
+                    }
+                }
+            }
+            .nav-divider{
+                margin-left: $mg-0;
+            }
+            .nav-link{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid $color-white-4;
+                @include styleText($fs-1,$fw-2,$color-black-1);
+                text-transform: uppercase;
+                letter-spacing: $ls-0 - 0.5;
+                padding:0 0 0 $pd-4;
+                span{
+                    border-left: 1px solid $color-white-3;
+                    font-size: $fs-3 + 2;
+                    text-align: center;
+                    padding: $pd-9 $pd-10;
+                }
+                i{
+                    font-size: $fs-1 - 1;
+                    margin-right: $mg-0 + 3;
+                }
+                &.active,
+                &:focus,
+                &:hover{
+                    color: $color-yellow-0;
+                }
+            }
+        }
+    }
+
+    // RESPONSIVE
+    @media screen and (min-width: 769px){
+        box-shadow: none;
+        .massiveNavbar{
+            &.resize-header{
+                height: 100px;
+                background-color: transparent;
+                &.sz-top--is-visible{
+                    height: 60px;
+                    background-color: $color-black-4;
+                }
+            }
+            .navbar-brand{
+                height: 100%;
+                margin-right: 0;
+            }
+            .navbar-collapse{
+                background-color: transparent;
+                .nav-link{
+                    display: block;
+                    border: none;
+                    color: $color-white-0;
+                    &.activer, &:hover, &:focus{
+                        color: $color-yellow-0;
+                    }
+                    span{
+                        border: none;
+                        font-size: $fs-1;
+                        padding: 0;
+                        margin-left: $mg-0 + 1;
+                    }
+                }
+                .nav-item{
+                    &:last-child{
+                        .nav-link{
+                            border: none;
+                        }
+                    }
+                }
+                .nav-divider{
+                    @include styleText($fs-1,$fw-2,$color-white-0);
+                    text-align: center;
+                    padding-left: $pd-4;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 788px){
+        .massiveNavbar{
+            padding: 0 $pd-4;
+        }
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 991.98px){
+        .massiveNavbar{
+            .navbar-collapse{
+                .nav-link{
+                    i{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsiveMobileFirst("large"){
+        .massiveNavbar{
+            &.resize-header{
+                .navbar-brand{
+                    img{
+                        height: 96px;
+                    }
+                }
+                &.sz-top--is-visible{
+                    .navbar-brand{
+                        img{
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+            .navbar-collapse{
+                .nav-link{
+                    padding: 0 $pd-0;
+                }
+                .nav-divider{
+                    padding: 0 $pd-1 + 1;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1021.98px){
+        .massiveNavbar{
+            &.resize-header{
+                .navbar-brand{
+                    img{
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+}

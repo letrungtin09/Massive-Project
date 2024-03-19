@@ -1,0 +1,44 @@
+.feedback{
+    border-bottom: 1px solid $color-white-5;
+    .feedback__content{
+        padding: 0 $pd-2;
+        .feedback__item{
+            text-align: center;
+            .feedback__img{
+                display: inline-block;
+                width: 100px;
+                margin-bottom: $mg-1;
+                img{
+                    border-radius: 50%;
+                }
+            }
+            .feedback__text{
+                @include styleText($fs-4 + 1,$fw-2,$color-gray-1);
+                font-style: italic;
+                line-height: $lh-1;
+                margin-bottom: $mg-3;
+            }
+            .feedback__user{
+                text-transform: uppercase;
+                letter-spacing: $ls-1;
+                margin-top: $mg-6;
+                p{
+                    &:first-child{
+                        @include styleText($fs-1 + 1,$fw-2,$color-black-2);
+                    }
+                    &:last-child{
+                        @include styleText($fs-7 + 2,$fw-2,$color-gray-8);
+                    }
+                }
+            }
+        }
+    }
+
+    // RESPONSIVE
+    @media screen and (min-width: 1215px){
+        .feedback__content{
+            width: 66.66666667%;
+            margin: auto;
+        }
+    }
+}

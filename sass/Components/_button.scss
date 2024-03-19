@@ -1,0 +1,19 @@
+.button--black{
+    @include styleButton($color-black-2);
+    &:hover{
+        @include styleButtonHover($color-yellow-0,$color-white-0);
+    }
+    &:focus{
+        @include styleButtonFocus($color-yellow-0,$color-white-0);
+    }
+}
+
+.button--yellow{
+    @include styleButton($color-yellow-0);
+    &:hover{
+        @include styleButtonHover($color-white-0,$color-black-2);
+    }
+    &:focus{
+        @include styleButtonFocus($color-white-0,$color-black-2);
+    }
+}

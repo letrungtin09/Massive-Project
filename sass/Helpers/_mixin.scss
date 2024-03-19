@@ -1,0 +1,66 @@
+@mixin styleText($fs, $fw, $color){
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin styleButton($bg-color){
+    background-color: $bg-color;
+}
+
+@mixin styleButtonHover($bg-color, $color){
+    background-color: $bg-color;
+    color: $color;
+}
+
+@mixin styleButtonFocus($bg-color, $color){
+    background-color: $bg-color;
+    color: $color;
+}
+
+@mixin arrow($size, $direction, $color){
+    border-style: solid;
+    border-color: transparent;
+    display: inline-block;
+    border-width: $size;
+    
+    @if $direction == up{
+        border-bottom-color: $color;
+    }
+    @else if $direction == down{
+        border-top-color: $color;
+    }
+    @else if $direction == left{
+        border-right-color: $color;
+    }
+    @else if $direction == right{
+        border-left-color: $color;
+    }
+    @else{
+        @error "Unknown direction: #{$direction}.";
+    }
+}
+
+@mixin responsiveMobileFirst($screen){
+    @if map-has-key($map:$breakpoints-min-width , $key:$screen){
+        $value: map-get($map:$breakpoints-min-width , $key:$screen);
+        @media screen and (min-width:$value){
+            @content;
+        }
+    }
+    @else{
+        @warn "`{$screen}` is not supported";
+    }
+}
+
+@mixin responsiveDesktopFirst($screen){
+    @if map-has-key($map:$breakpoints-max-width , $key:$screen){
+        $value: map-get($map:$breakpoints-max-width , $key:$screen);
+        @media screen and (max-width:$value){
+            @content;
+        }
+    }
+    @else{
+        @warn "`{$screen}` is not supported";
+    }
+}
