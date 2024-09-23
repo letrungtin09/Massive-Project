@@ -1,52 +1,56 @@
-.copyright{
-    &.section-padding{
-        padding: $pd-6 0;
+.copyright {
+  &.section-padding {
+    padding: $pd-6 0;
+  }
+  border-top: 1px solid $color-black-8;
+  background-color: $color-black-7;
+  .copyright__text {
+    p {
+      color: $color-gray-11;
+      margin-top: $mg-0 + 3;
+      span {
+        color: $color-yellow-0;
+      }
     }
-    border-top: 1px solid $color-black-8;
-    background-color: $color-black-7;
-    .copyright__text{
-        p{
-            color: $color-gray-11;
-            margin-top: $mg-6;
-        }
+  }
+  .copyright__social {
+    margin-top: $mg-6;
+    a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      line-height: $lh-8;
+      border: 1px solid $color-gray-12;
+      border-radius: 50%;
+      text-align: center;
+      @include styleText($fs-3, $fw-2, $color-gray-12);
+      margin-right: $mg-4;
+      &:hover {
+        border-color: transparent;
+        background-color: $color-gray-12;
+        color: $color-white-0;
+      }
     }
-    .copyright__social{
-        margin-top: $mg-6;
-        a{
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            line-height: $lh-8;
-            border: 1px solid $color-gray-12;
-            border-radius: 50%;
-            text-align: center;
-            @include styleText($fs-3,$fw-2,$color-gray-12);
-            margin-right: $mg-4;
-            &:hover{
-                border-color: transparent;
-                background-color: $color-gray-12;
-                color: $color-white-0;
-            }
-        }
-    }
+  }
 
-    // RESPONSIVE
-    @include responsiveMobileFirst("large"){
-        border-bottom: 6px solid $color-black-2;
-    }
+  // RESPONSIVE
+  @include responsiveMobileFirst("large") {
+    border-bottom: 6px solid $color-black-2;
+  }
 
-    @media screen and (min-width: 993px){
-        .copyright__social{
-            text-align: right;
-            a{
-                margin: 0 0 0 $mg-4;
-            }
-        }
+  @media screen and (min-width: 993px) {
+    .copyright__social {
+      text-align: right;
+      a {
+        margin: 0 0 0 $mg-4;
+      }
     }
+  }
 
-    @include responsiveMobileFirst("extra-large"){
-        .copyright__text, .copyright__social{
-            margin: 0;
-        }
+  @include responsiveMobileFirst("extra-large") {
+    .copyright__text,
+    .copyright__social {
+      margin: 0;
     }
+  }
 }
